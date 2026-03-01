@@ -1,0 +1,50 @@
+notification_email: "1216002004@qq.com"
+check_interval_hours: 6
+notification_age_days: 7  # Only notify about news from the last 7 days
+
+companies:
+  - name: "Unity Technologies"
+    ticker: "U"
+    sources:
+      - type: "website"
+        url: "https://investors.unity.com/news/default.aspx"
+        label: "Investor Relations"
+      - type: "website"
+        url: "https://blog.unity.com/"
+        label: "Official Blog"
+      - type: "sec_edgar"
+        cik: "0001810806"
+        form_types: ["8-K", "10-Q", "10-K"]
+      - type: "news"
+        query: "Unity Technologies game engine"
+        label: "Financial News"
+      - type: "social"
+        platform: "twitter"
+        handle: "unity3d"
+        label: "Twitter"
+
+  - name: "Nvidia"
+    ticker: "NVDA"
+    sources:
+      - type: "website"
+        url: "https://investor.nvidia.com/news/press-release-details/"
+        label: "Investor Relations"
+      - type: "sec_edgar"
+        cik: "0001045810"
+        form_types: ["8-K", "10-Q", "10-K"]
+      - type: "news"
+        query: "Nvidia AI GPU"
+        label: "Financial News"
+
+  - name: "Microsoft"
+    ticker: "MSFT"
+    sources:
+      - type: "website"
+        url: "https://www.microsoft.com/en-us/investor/default"
+        label: "Investor Relations"
+      - type: "sec_edgar"
+        cik: "0000789019"
+        form_types: ["8-K", "10-Q", "10-K"]
+      - type: "news"
+        query: "Microsoft Azure cloud"
+        label: "Financial News"
