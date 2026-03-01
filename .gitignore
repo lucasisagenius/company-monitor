@@ -3,8 +3,8 @@
 .env.local
 .env.example.local
 
-# Database
-monitor.db
+# Note: monitor.db IS tracked to backup in GitHub
+# See .github/workflows/monitor.yml for auto-updates
 
 # Python
 __pycache__/
