@@ -41,9 +41,13 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add monitor.db
-          git commit -m "Update monitor database" || echo "No database changes"
-          git push || echo "No changes to push"
+          if [ -f monitor.db ]; then
+            git add monitor.db
+            git commit -m "Update monitor database" || true
+            git push || true
+          else
+            echo "Database not yet created"
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
