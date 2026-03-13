@@ -33,6 +33,7 @@ jobs:
           MAIL_SMTP_HOST=smtp.gmail.com
           MAIL_SMTP_PORT=587
           EOF
+          sed -i 's/^[[:space:]]*//' .env
 
       - name: Run monitoring agent
         run: python scheduler.py --run-once

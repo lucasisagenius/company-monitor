@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import List, Tuple, Optional
 
 
-DB_PATH = Path.home() / "company-monitor" / "monitor.db"
+DB_PATH = Path(__file__).resolve().parent.parent / "monitor.db"
 
 
 def get_db_connection() -> sqlite3.Connection:
